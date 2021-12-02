@@ -1,0 +1,512 @@
+.stevedoring_page {
+	min-height: 100vh;
+	.booking_tablediv {
+		width: 97%;
+		margin: 0 auto;
+		max-height: 62vh;
+		overflow: scroll;
+		@include for-desktop{
+			max-height: 70vh;
+		}
+		.booking_no_table{
+			width: 100%;
+			tr.example-element-row {
+				&:not(.example-expanded-row) {
+					&:hover {
+						.booking_number {
+							color: $color-downy !important;
+							text-decoration: underline;
+							cursor: pointer;
+						}
+					}
+				}
+			}
+			tr {
+				&:nth-of-type(1) {
+					th {
+						background: $color-jet-grey;
+						font-size: $small-heading;
+						color: $color-iron !important;
+					}
+				}
+				th {
+					&:nth-child(12), &:nth-child(13), &:nth-child(14), &:nth-child(15){
+						text-align: center;
+						background: $color-darkmint-green;
+
+					}
+					&:first-child{
+						.mat-checkbox-frame {
+							border: 2px solid $color-white !important;
+						}
+					}
+				}
+				td {
+					&:nth-child(12), &:nth-child(13), &:nth-child(14), &:nth-child(15){
+						background: $color-desert-storm;
+						text-align: center;
+					}
+					@include for-tablet{
+						padding: 0 10px;
+						&:first-of-type{
+							padding: 0 0 0 24px;
+						}
+					}
+				}
+			}
+			tr.example-element-row {
+				&:not(.example-expanded-row) {
+					&:hover {
+						background: $color-milk-white;
+					}
+				}
+			}
+			.arrow_class {
+				cursor: pointer;
+			}
+			.inner_table {
+				border-spacing: 5px;
+				width: 100% !important;
+				tr {
+					background: $color-platinum;
+					&:nth-child(odd) {
+						background: $color-porselain;
+					}
+					&:first-child{
+						th {
+							background: $color-platinum !important;
+							font-weight: bold;
+							color: $color-black !important;
+						}
+					}
+					th {
+						font-size: $extrasmall-heading !important;
+						padding: 5px 10px;
+						white-space: nowrap;
+						&:nth-child(n+13) {
+							color: transparent !important;
+						}
+					}
+					td {
+						font-size: $extrasmall-heading !important;
+						padding: 5px 10px;
+						white-space: nowrap;
+						&:first-child {
+							color: $color-downy !important;
+							text-decoration: underline;
+						}
+						&:nth-child(12), &:nth-child(13), &:nth-child(14), &:nth-child(15){
+							background: $color-mercury;
+							text-align: center;
+						}
+						&:nth-child(16) {
+							background: $color-mercury;
+							text-align: center;
+						}
+						&:nth-child(12) {
+							background: $color-platinum;
+						}
+					}	
+				}
+				tr.mat-row {
+					border-left: none;
+				}
+			}
+			.arrow_icontd {
+				position: relative;
+				cursor: pointer;
+				.arrow_icon {
+					width: 20px;
+					height: 20px;
+					display: inline-block;
+					background: url("../../images/stevedoring/arrow_blackricon.png");
+				}
+				.rotate_class {
+					transform: rotate(90deg);
+				}
+			}
+			.print_icon {
+				position: relative;
+				&:before {
+					content: "";
+					width: 20px;
+					height: 20px;
+					background: url("../../images/stevedoring/icon_print.png");
+					position: absolute;
+					top: 13px;
+					cursor: pointer;
+				}
+			}
+		}
+		.mat_paginator {
+			background: $color-platinum !important;
+			color: $color-charcoal !important;
+			margin: -1px 0 10px;
+		}
+		.mat-paginator-range-actions {
+			background: $color-platinum;
+		}
+	}
+	tr.example-expanded-row.red_border_class + tr, .red_border_class {
+		border-left: 5px solid $color-ruby-red;
+	}
+	tr.example-expanded-row.yellow_border_class + tr, .yellow_border_class{
+		border-left: 5px solid $color-lightning-yellow;
+	}
+	tr.example-expanded-row.dual_border_class + tr, .dual_border_class{
+		border-left: 5px solid $color-ruby-red;
+		position: relative;
+		&::after {
+			position: absolute;
+			content: '';
+			border-left: 3px solid $color-lightning-yellow;
+			height: 50%;
+			width: 0%;
+			bottom: -1px;
+			left: -5px;
+		}
+	}
+	tr.example-expanded-row.transparent_border_class + tr, .transparent_border_class{
+		border-left: 5px solid transparent;
+	}
+	.title_div {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 18px 20px;
+		.inner_div {
+			.print_label {
+				width: 140px;
+				height: 36px;
+				background: $color-downy;
+				font-size: $default-heading;
+				color: $color-black;
+				border-radius: 0;
+			}
+			.search_txt {
+				color: $color-iron !important;
+				padding: 0 15px 0 0;
+				cursor: pointer;
+				min-width: 230px;
+				margin: 0 35px 0 0;
+				&::after {
+					@include contentAfter;
+					background: url("../../images/stevedoring/searchb_icon.png");
+					right: 15px;
+					top: 41%;
+				}
+				.mat-form-field-infix {
+					background: $color-white;
+					padding: 3px 0;
+					top: 10px;
+				}
+				.mat-form-field-label-wrapper {
+					left: 5px;
+					top: -0.9em;
+				}
+				.mat-form-field-empty.mat-form-field-label {
+					top: 10px;
+					color: $color-nickel-gray;
+				}
+				input.mat-input-element {
+					margin: 0px 7px;
+					caret-color: $color-black !important;
+					position: relative;
+					top: -7px;
+					color: $color-charcoal;
+				}
+			}
+			.filter_btn {
+				margin: 0 30px 0 0;
+				border-right: 1px solid $color-iron;
+				border-radius: 0;
+				padding: 0 30px 0 16px;
+			}
+			.download_icon {
+				background: url("../../images/stevedoring/icon_download.png") no-repeat;
+				width: 24px;
+				height: 24px;
+				position: relative;
+				top: 8px;
+				right: 22px;
+			}
+			.filter_icon {
+				background: url("../../images/stevedoring/icon_filter.png") no-repeat;
+				width: 70px;
+				height: 24px;
+				position: relative;
+				top: -2px;
+				right: 0;
+			}
+		}
+	}
+	table {
+		&:first-child {
+			td {
+				font-size: $small-heading;
+				color: $color-black;
+			}
+		}
+	}
+	.pagination{
+		background: $color-platinum;
+		height: 30px;
+		display: flex;
+		align-items: center;
+		padding: 7px;
+		ul{
+			vertical-align: middle;
+			margin: 0;
+			background: $color-porselain;
+			padding: 5px;
+		}
+		.pagination-previous{
+			font-size: 0;
+			position: relative;
+			top: 6px;
+			a{
+				padding: 0;
+				&::before{
+					@include contentBefore;
+					background: url("../../images/stevedoring/arrow_blackricon.png");
+					transform: rotate(180deg);
+					top: 2px;
+					left: 5px;
+				}
+				&:hover{
+					background: $color-platinum;
+				}
+			}
+		}
+		.pagination-previous.disabled{
+			&::before{
+				@include contentBefore;
+				background: url("../../images/stevedoring/arrow_blackricon.png");
+				transform: rotate(180deg);
+				top: 2px;
+				left: 5px;
+				opacity: 0.5;
+			}
+		}
+		.pagination-next{
+			font-size: 0;
+			position: relative;
+			top: 6px;
+			a{
+				padding: 0;
+				&::after{
+					@include contentBefore;
+					background: url("../../images/stevedoring/arrow_blackricon.png");
+					left: -7px;
+					top: -2px;
+				}
+				&:hover{
+					background: $color-platinum;
+				}
+			}
+		}
+		.pagination-next.disabled{
+			&::after{
+				@include contentBefore;
+				background: url("../../images/stevedoring/arrow_blackricon.png");
+				left: -7px;
+				top: -2px;
+				opacity: 0.5;
+			}
+		}
+		.current{
+			background: $color-porselain;
+			border-radius: 50%;
+			color: $color-black;
+		}
+		a{
+			color: $color-black;
+			padding: 0.1875rem 0.625rem;
+			border-radius: 50%;
+			&:hover{
+				background:  $color-platinum;
+			}
+		}
+		.disabled{
+			padding: 0;
+		}
+	}
+	
+}
+
+
+.dark_theme {
+	.stevedoring_page {
+		.title_div{
+			.inner_div {
+				.search_txt {
+					.mat-form-field-label-wrapper {
+						left: 5px;
+						top: -0.9em;
+					}
+					input.mat-input-element {
+						caret-color: $color-iron !important;
+						color: $color-iron;
+					}
+					.mat-form-field-infix {
+						background: $color-charcoal;
+						padding: 3px 0;
+						top: 10px;
+					}
+					&::after {
+						background: url("../../images/stevedoring/search_icon.png");
+					}
+				}
+				.download_icon {
+					background: url("../../images/stevedoring/download_icon.png")no-repeat;
+				}
+				.filter_icon {
+					background: url("../../images/stevedoring/filter_icon.png")no-repeat;
+				}
+			}
+		}
+		.booking_tablediv {
+			.booking_no_table {
+				background: $color-charcoal;
+				tr.example-element-row {
+					&:not(.example-expanded-row) {
+						&:hover {
+							background: $color-ship-grey !important;
+						}
+					}
+				}
+				tr{
+					&:nth-of-type(1) {
+						th {
+							background: $color-bright-grey;
+						}
+					}
+					th {
+						&:nth-child(12), &:nth-child(13), &:nth-child(14), &:nth-child(15){
+							background: $color-gun-metal;
+							text-align: center;
+						}
+						&:first-child{
+							.mat-checkbox-frame {
+								border: 2px solid $color-white !important;
+							}
+						}
+					}
+					td {
+						&:nth-child(12), &:nth-child(13), &:nth-child(14), &:nth-child(15){
+							background: $color-gun-metal;
+							text-align: center;
+						}
+						color: $color-iron;
+					}
+				}
+				
+				.inner_table {
+					tr {
+						background: $color-dark-green !important;
+						&:nth-child(odd) {
+							background: $color-dark-grey !important;
+						}
+						&:nth-of-type(1) {
+							th {
+								background: $color-dark-green !important;
+								color: $color-iron !important;
+								&:nth-of-type(n+13) {
+									color: transparent !important;
+								}
+							}
+						}
+						td {
+							&:nth-child(12), &:nth-child(13), &:nth-child(14), &:nth-child(15){
+								background: $color-rangoon-green;
+								text-align: center;
+							}
+							&:nth-child(16) {
+								background: $color-rangoon-green;
+								text-align: center;
+							}
+							&:nth-child(12) {
+								background: $color-dark-green !important;
+							}
+						}
+					}
+				}
+				.arrow_icontd {
+					.arrow_icon {
+						background: url("../../images/stevedoring/arrow_whitericon.png");
+					}
+				}
+				.print_icon {
+					&:before {
+						background: url("../../images/stevedoring/print_icon.png");
+					}
+				}
+				.mat-checkbox-frame {
+					border: 2px solid $color-hit-gray !important;
+				}
+			}
+			.mat_paginator {
+				background: $color-dark !important;
+				color: $color-iron !important;
+				margin: -1px 0 10px;
+			}
+			.mat-paginator-range-actions {
+				background: $color-dark-grey;
+			}
+		}
+		.pagination{
+			background: $color-dark-green;
+			ul{
+				background: $color-dark-grey;
+			}
+			.pagination-previous{
+				a{
+					&::before{
+						background: url("../../images/stevedoring/arrow_whitericon.png");
+					}
+				}
+			}
+			.pagination-previous.disabled{
+				&::before{
+					background: url("../../images/stevedoring/arrow_whitericon.png");
+				}
+			}
+			.pagination-next{
+				a{
+					&::after{
+						background: url("../../images/stevedoring/arrow_whitericon.png");
+					}
+				}
+			}
+			.pagination-next.disabled{
+				&::after{
+					background: url("../../images/stevedoring/arrow_whitericon.png");
+				}
+			}
+			.current{
+				background: $color-gun-metal;
+				color: $color-white;
+			}
+			a{
+				color: $color-white;
+				&:hover{
+					background: $color-gun-metal;
+				}
+			}
+		}
+	}
+}
+tr.example-detail-row {
+	height: 0 !important;
+}
+.example-element-row {
+	td {
+		border-bottom-width: 0;
+		@include for-tablet{
+			padding-right: 12px;
+		}
+	}
+}
+.example-element-detail {
+	padding: 0 0 0 47px;
+}

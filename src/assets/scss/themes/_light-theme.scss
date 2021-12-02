@@ -1,0 +1,12 @@
+.theme_class{
+	background: $color-aquablu-shade;
+	@include customScrollbar;
+	h3{
+		color: $color-charcoal;
+		font-size: $xlarge-heading;
+		font-weight: normal;
+			@include for-tablet{
+				display: none;
+			}
+	}
+}

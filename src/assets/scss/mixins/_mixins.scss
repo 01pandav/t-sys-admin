@@ -1,0 +1,53 @@
+//Media query
+@mixin for-tablet {
+    @media only screen and (max-width: $tablet){
+        @content;
+    }
+}
+
+@mixin for-desktop {
+    @media only screen and (min-width: $desktop){
+        @content;
+    }
+}
+
+@mixin fontFamily{
+    font-family: $calibri-font;
+}
+@mixin contentBefore{
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: relative;
+}
+@mixin contentAfter{
+    content: "";
+    width: 24px;
+    height: 24px;
+    position: absolute;
+}
+@mixin customScrollbar{
+    &::-webkit-scrollbar {
+        width: 9px;
+    }
+    &::-webkit-scrollbar-track {
+        background: $color-white;
+    }
+    &::-webkit-scrollbar-thumb {
+        border-radius: 9px;
+        border: solid 2px $color-white;
+        background-color: $color-quill-grey;
+        &:hover {
+            background: $color-quill-grey;
+        }
+    }
+    &::-webkit-scrollbar-corner {
+        background-color: $color-white;
+    }
+    &::-webkit-scrollbar-button {
+        background-color: $color-white;
+        background-repeat: no-repeat;
+        cursor: pointer;
+    }
+
+}

@@ -1,0 +1,38 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <div class="logo">
+            <a href=""><img src="../../../assets/images/navbar/2w_logo.png" class="logo_img" alt="" title=""></a>
+            <div class="nav_menu">
+                <ul>
+                    <li><a  class="active">Dashboard</a></li>
+                   
+                    
+                </ul>
+            </div>
+            <div class="responsive_menu">
+                <button mat-button [matMenuTriggerFor]="responsiveMenu">
+                    <span class="material-icons menu_icon"> menu </span>
+                </button>
+                <mat-menu #responsiveMenu="matMenu" xPosition="before">
+                    <ul class="responsive_matmenu">
+                        <li><a href="">Dashboard</a></li>
+                      
+                      
+                    </ul>
+                </mat-menu>
+            </div>
+        </div>
+        <div class="icon_btn">
+          
+           
+            <button mat-button (click)="openLogoutDialog()" class="logout_btn">
+                <span><img src="../../../assets/images/navbar/logout_icon.png" alt="" title=""></span>
+            </button>
+        </div>
+
+    </mat-toolbar-row>
+</mat-toolbar>
+<div class="breadcrumb_div">
+    <span class="breadcrumb"> {{breadcrumbTitle}}</span>
+    
+</div>

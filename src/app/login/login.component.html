@@ -1,0 +1,35 @@
+<mat-grid-list class="mat_grid_list" cols="9" rowHeight="100vh" >
+    <mat-grid-tile class="left_div" [colspan]="4">
+    </mat-grid-tile>
+    <mat-grid-tile class="right_div" [colspan]="5">
+        <div class="inner_div">
+            <img src="../../../assets/images/login/logo.png" alt="" title="">
+            <h5>Login</h5>
+            <div class="form_div">
+                <form>
+                    <div>
+                        <mat-form-field class="mat_form_field">
+                            <mat-label class="mat_label">User ID</mat-label>
+                            <input matInput placeholder="test@example.com"  required>
+                           
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <mat-form-field class="mat_form_field">
+                            <mat-label class="mat_label">Password</mat-label>
+                            <input matInput [type]="hide ? 'password' : 'text'" required>
+                            <!-- <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                           <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                         </button> -->
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <button mat-button type="submit" routerLink="/dashboard" class="login_btn">Login</button>
+                        <!-- <a href="" routerLink="/forgot-password" class="forgot_link">Forgot Password?</a> -->
+                    </div>
+                </form>
+            </div>
+            <p class="copyright_txt">Copyright 2021 T-system. All rights reserved</p>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>

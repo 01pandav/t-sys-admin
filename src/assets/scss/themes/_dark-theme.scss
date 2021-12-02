@@ -1,0 +1,22 @@
+
+.dark_theme{
+	.theme_class{
+		background: $color-dark;
+		h3 {
+			color: $color-white !important;
+		}
+			&::-webkit-scrollbar-track {
+				background: $color-charcoal;
+			}
+			&::-webkit-scrollbar-thumb {
+				border: solid 2px $color-charcoal;
+				background-color: $color-comet-grey;
+			}
+			&::-webkit-scrollbar-corner {
+				background-color: $color-charcoal;
+			}
+			&::-webkit-scrollbar-button {
+				background-color: $color-charcoal;
+			}
+	}
+} 
